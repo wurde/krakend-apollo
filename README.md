@@ -8,6 +8,9 @@ A test of KrakenD proxying Apollo Server.
 # Validate the krakend configuration
 krakend check --config krakend.json --test-gin-routes --debug
 
+# Install dependencies
+npm install
+
 # Start the backend server
 npm start
 
