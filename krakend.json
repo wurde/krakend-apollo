@@ -1,0 +1,41 @@
+{
+  "version": 2,
+  "timeout": "3000ms",
+  "cache_ttl": "300s",
+  "name": "krakend-apollo",
+  "endpoints": [
+    {
+      "endpoint": "/graph",
+      "method": "GET",
+      "output_encoding": "no-op",
+      "querystring_params": [
+        "query"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/graph",
+          "encoding": "no-op",
+          "method": "GET",
+          "host": [
+            "http://localhost:4000"
+          ]
+        }
+      ]
+    },
+    {
+      "endpoint": "/graph",
+      "method": "POST",
+      "output_encoding": "no-op",
+      "backend": [
+        {
+          "url_pattern": "/graph",
+          "encoding": "no-op",
+          "method": "POST",
+          "host": [
+            "http://localhost:4000"
+          ]
+        }
+      ]
+    }
+  ]
+}
